@@ -1,0 +1,5 @@
+frontend/.DS_Store
+frontend/README.md
+frontend/node_modules/
+frontend/package-lock.json
+frontend/package.json
