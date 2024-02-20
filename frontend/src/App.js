@@ -69,7 +69,7 @@ function Home() {
     <AppStyled bg={bg} className="App">
       {orbMemo}
       <MainLayout>
-        <Navigation active={active} setActive={setActive} />
+        {/* <Navigation active={active} setActive={setActive} /> */}
         <main>{displayData()}</main>
       </MainLayout>
     </AppStyled>

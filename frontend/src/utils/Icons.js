@@ -27,7 +27,7 @@ export const medical = <i className="fa-solid fa-briefcase-medical"></i>
 export const tv = <i className="fa-solid fa-tv"></i>
 export const circle = <i className="fa-solid fa-circle-dot"></i>
 export const rupee = <i className="fa fa-inr"></i>
-export const login=<i class="fa-solid fa-right-from-bracket"></i>
-export const goal= <i class="fa-solid fa-bullseye"></i>
-export const report=<i class="fa-solid fa-file-lines"></i>
-export const hamburger = <i class="fa-solid fa-bars"></i>
+export const login=<i className="fa-solid fa-right-from-bracket"></i>
+export const goal= <i className="fa-solid fa-bullseye"></i>
+export const report=<i className="fa-solid fa-file-lines"></i>
+export const hamburger = <i className="fa-solid fa-bars"></i>

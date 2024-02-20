@@ -21,10 +21,13 @@ function Navigation({ active, setActive }) {
   gap: 2rem;
 
   .user-con {
+    width:100%;
     height: 100px;
     display: flex;
+    justify-content:center;
     align-items: center;
     gap: 1rem;
+    cursor:pointer;
 
     h2 {
       color: rgba(34, 34, 96, 1);
@@ -84,7 +87,7 @@ function Navigation({ active, setActive }) {
         </div>
         <div className="x-button" onClick={()=>setNav((prev)=>!prev)}>
           {
-            !nav?<hamburger/>:<span>X</span>
+            !nav?<span>{hamburger}</span>:<span>X</span>
           }
         </div>
       </div>
