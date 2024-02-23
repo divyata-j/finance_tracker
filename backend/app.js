@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-require('dotenv').config()
 
 const connectDB = require('./db/db')
 const { errorHandler } = require('./middlewares/errorMiddleware')
 const { verifyToken } = require('./middlewares/verifyToken')
+const { path } = require('pdfkit')
 
 //Initialize the database connection
 connectDB()

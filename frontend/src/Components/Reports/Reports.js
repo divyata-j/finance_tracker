@@ -31,13 +31,13 @@ function CustomToolbar() {
 function Reports() {
     const initColums = [
         // {field: 'id', headerName: '#', width: 200},
-        {field: 'title', headerName: 'Title', width: 200},
-        {field: 'amount', headerName: 'Amount', width: 200},
-        {field: 'category', headerName: 'Category', width: 200},
+        {field: 'title', headerName: 'Title', width: "15%"},
+        {field: 'amount', headerName: 'Amount', width: "15%"},
+        {field: 'category', headerName: 'Category', width: "15%"},
         {field: 'date', headerName: 'Date',renderCell:(GridCellParams) => {
             return dateFormat(GridCellParams)
-        }, width: 200},
-        {field: 'description', headerName: 'Description', width: 200},
+        }, width: "15%"},
+        {field: 'description', headerName: 'Description', width: "15%"},
     ]
     const [rows,setRows] = useState([]);
     const [columns,setCloumns] = useState(initColums);
@@ -46,23 +46,24 @@ function Reports() {
     const getData = (type) => {
 
         let goalColums = [
-            {field: 'title', headerName: 'Title', width: 250},
-            {field: 'targetAmount', headerName: 'Target Amount', width: 250},
+            {field: 'title', headerName: 'Title', width: "20%"},
+            {field: 'targetAmount', headerName: 'Target Amount', width: "20%"},
             {field: 'deadLine', headerName: 'Deadline',renderCell:(GridCellParams) => {
                 return dateFormat(GridCellParams)
-            }, width: 250},
-            {field: 'purpose', headerName: 'Purpose', width: 250},
+            }, width: "20%"},
+            {field: 'purpose', headerName: 'Purpose', width: "20%"},
         ]
         
         let balanceColums = [
-            {field: 'income', headerName: 'Income', width: 350},
-            {field: 'expense', headerName: 'Expense', width: 350},
-            {field: 'balance', headerName: 'Balance', width: 350},
+            {field: 'income', headerName: 'Income', width: "30%"},
+            {field: 'expense', headerName: 'Expense', width: "30%"},
+            {field: 'balance', headerName: 'Balance', width: "30%"},
         ]
 
         if (type === "income"){
             setCloumns(initColums)
             let incomeRows =[]
+            console.log(incomes)
             incomes.map(({_id, title, amount, date, category, description}) => {
                 incomeRows.push({
                     id: _id,
@@ -126,7 +127,7 @@ function Reports() {
                     type="button"
                     name={'Income'}
                     onClick={() => getData("income")}
-                    bPad={'.8rem 1.6rem'}
+                    bPad={'.2rem .4rem'}
                     bRad={'10px'}
                     bg={'var(--color-accent'}
                     color={'#fff'}
@@ -135,7 +136,7 @@ function Reports() {
                     type="button"
                     name={'Expenses'}
                     onClick={() => getData("expense")}
-                    bPad={'.8rem 1.6rem'}
+                    bPad={'.2rem .4rem'}
                     bRad={'10px'}
                     bg={'var(--color-accent'}
                     color={'#fff'}
@@ -144,7 +145,7 @@ function Reports() {
                     type="button"
                     name={'Goals'}
                     onClick={() => getData("goals")}
-                    bPad={'.8rem 1.6rem'}
+                    bPad={'.2rem .4rem'}
                     bRad={'10px'}
                     bg={'var(--color-accent'}
                     color={'#fff'}
@@ -153,7 +154,7 @@ function Reports() {
                     type="button"
                     name={'Balance Sheet'}
                     onClick={() => getData("balance_sheet")}
-                    bPad={'.8rem 1.6rem'}
+                    bPad={'.2rem .4rem'}
                     bRad={'10px'}
                     bg={'var(--color-accent'}
                     color={'#fff'}
@@ -162,6 +163,7 @@ function Reports() {
                 <div className="income-content" style={{ height: 400, width: '100%' }}>
                 <DataGrid
                     density="compact"
+                    width="90%"
                     rows={rows}
                     columns={columns}
                     pageSize={10}
@@ -176,27 +178,22 @@ function Reports() {
 
 const ReportsStyled = styled.div`
     display: flex;
-    overflow: auto;
+    width : 100%;
     .total-income{
         display: flex;
-        justify-content: center;
+        padding : 0.5rem;
+        flex-wrap : wrap;
+        justify-content: left;
         align-items: center;
-        background: #FCF6F9;
-        border: 2px solid #8566f5;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        border-radius: 20px;
-        padding: 1rem;
-        margin: 1rem 0;
+        border: 1px solid #8566f5;
+        box-sizing: border-box;
+        width : 100%;
         font-size: 1rem;
         gap: .5rem;
         span{
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 1rem;
             color: var(--color-delete);
         }
-    }
-    .income{
-        border: 2px solid #8566f5;
     }
     .income-content{
         display: flex;

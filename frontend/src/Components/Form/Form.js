@@ -99,7 +99,7 @@ const FormStyled = styled.form`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width:130%;
+    width:90%;
     input, textarea, select{
         font-family: inherit;
         font-size: inherit;
@@ -124,7 +124,7 @@ const FormStyled = styled.form`
 
     .selects{
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         select{
             color: rgba(34, 34, 96, 0.4);
             &:focus, &:active{

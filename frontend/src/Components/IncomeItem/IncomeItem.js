@@ -98,15 +98,14 @@ function IncomeItem({
 
 const IncomeItemStyled = styled.div`
     background: white;
-    border: 2px solid #8566f5;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    border-radius: 45px;
-    padding: 1rem;
+    border: 1px solid #8566f5;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 0.25rem;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 100%;
     color: black;
     .icon{
         width: 80px;
@@ -118,14 +117,14 @@ const IncomeItemStyled = styled.div`
         justify-content: center;
         // border: 2px solid #FFFFFF;
         i{
-            font-size: 2.6rem;
+            font-size: 1rem;
         }
     }
 
     .content{
-        flex: 1;
         display: flex;
         flex-direction: column;
+        flex-wrap : wrap;
         gap: .2rem;
         h5{
             font-size: 1.3rem;
@@ -147,11 +146,13 @@ const IncomeItemStyled = styled.div`
         .inner-content{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
             .text{
                 display: flex;
-                align-items: center;
-                gap: 1.5rem;
+                flex-direction: column;
+                gap: .2rem;
                 p{
                     display: flex;
                     align-items: center;

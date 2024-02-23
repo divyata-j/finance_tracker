@@ -44,65 +44,35 @@ function Goals() {
 }
 
 const GoalStyled = styled.div`
-    width=200%;
+display: flex;
+width:90%;
+.total-income{
+    text-wrap : break-word;
+    margin-bottom: 1rem;
+    // display: flex;
+    // box-sizing : border-box;
+    // background: #FCF6F9;
+    // border: 2px solid #8566f5;
+    // box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+    // border-radius: 20px;
+    // padding: 1rem;
+    // margin: 1rem 0;
+    // font-size: 2rem;
+    // gap: .5rem;
+    // span{
+    //     font-size: 2.5rem;
+    //     font-weight: 800;
+    //     color: var(--color-green);
+    // }
+}
+.income-content{
     display: flex;
-    // overflow: auto;
-    .total-income{
-        width:150%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #FCF6F9;
-        border: 2px solid #8566f5;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        border-radius: 20px;
-        padding: 1rem;
-        margin: 1rem 0;
-        font-size: 2rem;
-        gap: .5rem;
-        span{
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-delete);
-        }
-    }
-    @media screen and (max-width:305px) {
-        overflow:scroll;
-        width:180%;
-        display:grid;
-        grid-template-columns: repeat(2, 6fr);
-        .income{
-            margin-left:100%
-            width:30%;
-            border: 2px solid #8566f5;
-        }
-        .income-content{
-            display: flex;
-            gap: 2rem;
-            display:grid;
-                justify-content:space-between;
-            .incomes{
-                
-                margin-left:19%;
-                width:90%;
-                flex: 1;
-            }
-        }
-      
-    }
-    .income{
-        width:60%;
-        border: 2px solid #8566f5;
-    }
-    .income-content{
-        display: flex;
-        gap: 2rem;
-        .incomes{
-            margin-left:19%;
-            width:90%;
-            flex: 1;
-        }
-    }
+    flex-direction: column;
+    flex-wrap : wrap;
+    gap: 2rem;
+    
+}
+
 `;
 
 export default Goals

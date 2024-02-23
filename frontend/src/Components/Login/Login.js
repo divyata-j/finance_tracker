@@ -34,10 +34,10 @@ function Login() {
 
   return (
     <div className="login1">
-      <div className="background">
+      {/* <div className="background">
         <div className="shape"></div>
         <div className="shape"></div>
-      </div>
+      </div> */}
 
       <div className="login">
         <form action="POST" className="lform">

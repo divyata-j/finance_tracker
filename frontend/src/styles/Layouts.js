@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const MainLayout = styled.div`
-    padding: 2rem;
+    box-sizing: border-box;
     height: 100%;
     display: flex;
-    width:100%;
-    gap: 2rem;
-`;
+    width:90 %;
+    justify-content: center;
+
+    `;
 
 export const InnerLayout = styled.div`
-margin-right:0px;
     padding: 1rem ;
-    width: 100%;
+
+    box-sizing: border-box;
 `;

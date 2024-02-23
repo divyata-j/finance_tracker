@@ -33,12 +33,12 @@ function SignUp() {
             : response.data.message
         );
       }
-      // if (!response.data.success) {
-      //   alert(response.data.message);
-      // } else {
-      //   localStorage.setItem("token", response.data.token);
-      //   window.location.href = "/home";
-      // }
+      if (!response.data.success) {
+        alert(response.data.message);
+      } else {
+        localStorage.setItem("token", response.data.token);
+        window.location.href = "/home";
+      }
     } catch (error) {
       // alert("An error occurred. Please try again.");
       alert(error.response.data.message);

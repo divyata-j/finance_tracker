@@ -45,20 +45,36 @@ function History() {
     </HistoryStyled>
   );
 }
-
 const HistoryStyled = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem; /* Increase gap between history items */
+  align-items: center; /* Align items to the center horizontally */
+  
   .history-item {
-    background: #fcf6f9;
-    border: 2px solid #ff8c00;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    padding: 1rem;
-    border-radius: 20px;
+    background: #ffffff; /* Background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    padding: 1.5rem; /* Padding */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Limit maximum width */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* Styling for text */
+    .history-info {
+      font-size: 1.1rem;
+      color: #333; /* Dark text color */
+    }
+
+    /* Styling for amount */
+    .history-amount {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #6c5ce7; /* Purple color */
+    }
   }
 `;
 

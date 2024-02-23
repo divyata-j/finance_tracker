@@ -104,7 +104,6 @@ const GoalFormStyled = styled.form`
         }
     }
     .input-control{
-        width:120%;
         input{
             width: 100%;
         }

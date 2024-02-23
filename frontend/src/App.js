@@ -34,9 +34,9 @@ function App() {
 
 function Home() {
 
-  if(!localStorage.getItem("token")){
-    window.location.href = '/'
-  }
+  // if(!localStorage.getItem("token")){
+  //   window.location.href = '/'
+  // }
 
   const [active, setActive] = useState(1)
   const navigation = useNavigate()
@@ -78,10 +78,11 @@ function Home() {
 
 const AppStyled = styled.div`
   height: 100vh
-  background-image: url(${(props) => props.bg})
   position: relative
+  width : 100%:
+  padding : 0;
+
   main {
-    flex: 1
     background: rgba(252, 246, 249, 0.78)
     border: 3px solid #ffffff
     backdrop-filter: blur(2px)

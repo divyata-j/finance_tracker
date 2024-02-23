@@ -71,8 +71,8 @@ function Orb() {
 
     return (
         <>
-        <OrbStyled/>
-        <SecondOrbStyled/>
+        {/* <OrbStyled/>
+        <SecondOrbStyled/> */}
         </>
     )
 }

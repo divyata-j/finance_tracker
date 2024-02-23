@@ -71,6 +71,7 @@ function Dashboard() {
                     {calculateMax(incomes.map((item) => item.amount || 0))}
                   </p>
                 </div>
+                <br/><br/>
                 <h2 className="salary-title">
                   Min <span>Expense</span>Max
                 </h2>
@@ -79,7 +80,7 @@ function Dashboard() {
                     {rupee}{" "}
                     {calculateMin(expenses.map((item) => item.amount || 0))}
                   </p>
-                  <p>
+                    <p>
                     {rupee}{" "}
                     {calculateMax(expenses.map((item) => item.amount || 0))}
                   </p>
@@ -92,8 +93,11 @@ function Dashboard() {
                                 </p>
                             </div> */}
             </div>
+          
           </div>
-          <div className="history-con">
+        </div>
+      </InnerLayout>
+      <div className="history-con" style={{padding: "1rem"}}>
             <History />
             {/* <h2 className="salary-title">Min <span>Salary</span>Max</h2>
                         <div className="salary-item">
@@ -114,272 +118,95 @@ function Dashboard() {
                             </p>
                         </div> */}
           </div>
-        </div>
-      </InnerLayout>
     </DashboardStyled>
   );
 }
-
 const DashboardStyled = styled.div`
-  .stats-con {
-    display: grid;
-    grid-template-columns: repeat(5, 6fr);
-    gap: 2rem;
-    @media screen and (max-width: 302px) {
-      grid-template-columns: 1fr; /* Set to one column for screens with a max width of 302px */
-    }
-    .chart-con {
-      @media screen and (max-width: 302px) {
-        grid-column: span 1; /* Span only 1 column for screens with a max width of 302px */
-      }
-      grid-column: 1 / 4;
-      height: 400px;
-
-
-      .amount-con {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-top: 2rem;
-        .income,
-        .expense {
-          grid-column: span 2;
-          @media screen and (max-width: 700px) {
-            grid-column: span 1; /* Span only 1 column for screens with a max width of 302px */
-          }
-        }
-        .income,
-        .expense,
-        .balance {
-          background: #fcf6f9;
-          border: 2px solid #8566f5;
-          box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-          border-radius: 20px;
-          padding: 1rem;
-          p {
-            font-size: 3.5rem;
-            font-weight: 700;
-          }
-        }
-        span {
-          color: black;
-        }
-        .balance {
-          grid-column: 2 / 4;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          p {
-            color: var(--color-green);
-            opacity: 0.6;
-            font-size: 4.5rem;
-          }
-          @media screen and (max-width: 700px) {
-            grid-column: span 1; /* Span only 1 column for screens with a max width of 302px */
-          }
-        }
-      }
-    }
-
-    .history-con {
-      grid-column: 4 /-1;
-      width: 130%;
-      h2 {
-        
-        margin: 0.1em 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .salary-title {
-        font-size: 1.2rem;
-        span {
-          font-size: 1.8rem;
-        }
-      }
-      .salary-item {
-        background: #fcf6f9;
-        border: 2px solid #8566f5;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        padding: 2rem;
-        border-radius: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        p {
-          font-weight: 600;
-          font-size: 1.8rem;
-        }
-      }
-      @media screen and (max-width: 302px) {
-        display:grid;
-        order:4;
-        margin-top:15rem;
-        grid-column: span 1; /* Span all columns for screens with a max width of 302px */
-        width: auto; /* Auto width for flexibility */
-      }
-      @media screen and (min-width:303px) and (max-width: 700px) {
-        display:grid;
-        order:4;
-        width: auto; 
-        margin-top:45rem;
-        
-        grid-column: span 1; /* Span all columns for screens with a max width of 302px */
-        width: 100%; /* Auto width for flexibility */
-      }
-  
-    }
-    .history-con1 {
-      grid-column: 1 / 4;
-      h2 {
-        margin: 1rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .salary-title {
-        font-size: 1.2rem;
-        span {
-          font-size: 1.8rem;
-        }
-      }
-      .salary-item {
-        background: #fcf6f9;
-        border: 2px solid #8566f5;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        padding: 1rem;
-        border-radius: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        p {
-          font-weight: 600;
-          font-size: 1.6rem;
-        }
-      }
-    }
-    @media screen and (max-width: 700px) {
-      order:1;
-      grid-column: span 1; /* Span all columns for screens with a max width of 302px */
-      width: auto; /* Auto width for flexibility */
-    }
-
+  /* Main Dashboard container */
+display: flex; 
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+  /* Inner Layout container */
+  ${InnerLayout} {
+    display: flex;
+    flex-direction: column;
+    
   }
 
+  /* Title */
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+  }
 
+  /* Statistics container */
+  .stats-con {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap children when necessary */
 
+    /* Chart container */
+    .chart-con {
+      width: calc(60% - 1rem); /* 60% of the container minus some margin */
+      margin-right: 1rem; /* Add some margin between chart and history */
+      display : flex;
+      /* Amount container */
+      .amount-con {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2rem;
 
-  // @media screen and(max-width:302px){
-  //   .stats-con {
-  //     display: flex;
-  //     flex-direction:column;
-  //     gap: 2rem;
-  //     .chart-con {
-  //       // grid-column: 1 / 4;
-  //       height: 400px;
-  //       .amount-con {
-  //         display: flex;
-          
-  //         gap: 2rem;
-  //         margin-top: 2rem;
-  //         .income,
-  //         .expense {
-  //           width:100%;
-  //         }
-  //         .income,
-  //         .expense,
-  //         .balance {
-  //           background: #fcf6f9;
-  //           border: 2px solid #8566f5;
-  //           box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-  //           border-radius: 20px;
-  //           padding: 1rem;
-  //           p {
-  //             font-size: 3.5rem;
-  //             font-weight: 700;
-  //           }
-  //         }
-  //         span {
-  //           color: black;
-  //         }
-  //         .balance {
-  //           // grid-column: 2 / 4;
-  //           display: flex;
-  //           flex-direction: column;
-  //           justify-content: center;
-  //           align-items: center;
-  //           p {
-  //             color: var(--color-green);
-  //             opacity: 0.6;
-  //             font-size: 4.5rem;
-  //           }
-  //         }
-  //       }
-  //     }
-  
-  //     .history-con {
-       
-  //       width: 180%;
-  //       h2 {
-          
-  //         margin: 0.1em 0;
-  //         display: flex;
-  //         align-items: center;
-         
-  //       }
-  //       .salary-title {
-  //         font-size: 1.2rem;
-  //         span {
-  //           font-size: 1.8rem;
-  //         }
-  //       }
-  //       .salary-item {
-  //         background: #fcf6f9;
-  //         border: 2px solid #8566f5;
-  //         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-  //         padding: 2rem;
-  //         border-radius: 20px;
-  //         display: flex;
-  //         // justify-content: space-between;
-  //         align-items: center;
-  //         p {
-  //           font-weight: 600;
-  //           font-size: 1.8rem;
-  //         }
-  //       }
-  //     }
-  //     .history-con1 {
-        
-  //       h2 {
-  //         margin: 1rem 0;
-  //         display: flex;
-  //         align-items: center;
-        
-  //       }
-  //       .salary-title {
-  //         font-size: 1.2rem;
-  //         span {
-  //           font-size: 1.8rem;
-  //         }
-  //       }
-  //       .salary-item {
-  //         background: #fcf6f9;
-  //         border: 2px solid #8566f5;
-  //         width:300%;
-  //         box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-          
-  //         border-radius: 20px;
-  //         display: flex;
-  //         align-items: center;
-  //         p {
-  //           font-weight: 600;
-  //           font-size: 1.6rem;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+        /* Individual sections */
+        .income,
+        .expense,
+        .history-con1 {
+          flex-basis: calc(50% - 0.5rem); /* Half of the container minus some margin */
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 1.5rem;
+          box-sizing: border-box;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+          margin-bottom: 1rem;
+
+          h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #555;
+          }
+
+          .salary-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+              font-weight: bold;
+              color: #8566f5;
+            }
+          }
+
+          .salary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    /* History container */
+    
+  }
 `;
+
+
+
 
 export default Dashboard;

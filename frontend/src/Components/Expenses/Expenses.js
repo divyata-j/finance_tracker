@@ -46,40 +46,37 @@ function Expenses() {
     )
 }
 
-const ExpenseStyled = styled.div`
+const ExpenseStyled= styled.div`
     display: flex;
-    overflow: auto;
-    width:130%;
+    width:90%;
     .total-income{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #FCF6F9;
-        border: 2px solid #8566f5;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        border-radius: 20px;
-        padding: 1rem;
-        margin: 1rem 0;
-        font-size: 2rem;
-        gap: .5rem;
-        span{
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-delete);
-        }
-    }
-    .income{
-        border: 2px solid #8566f5;
+        text-wrap : break-word;
+        margin-bottom: 1rem;
+        // display: flex;
+        // box-sizing : border-box;
+        // background: #FCF6F9;
+        // border: 2px solid #8566f5;
+        // box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
+        // border-radius: 20px;
+        // padding: 1rem;
+        // margin: 1rem 0;
+        // font-size: 2rem;
+        // gap: .5rem;
+        // span{
+        //     font-size: 2.5rem;
+        //     font-weight: 800;
+        //     color: var(--color-green);
+        // }
     }
     .income-content{
         display: flex;
+        flex-direction: column;
+        flex-wrap : wrap;
         gap: 2rem;
-        .incomes{
-            margin-left:10%;
-            width:40%;
-            flex: 1;
-        }
+        
     }
 `;
+
+
 
 export default Expenses
