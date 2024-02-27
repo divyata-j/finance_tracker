@@ -53,9 +53,9 @@ function Home() {
         return <Goals />
       case 6:
         return <Reports />
-      case 7: 
-        localStorage.removeItem("token")
-        return navigation("/")
+      // case 7: 
+      //   localStorage.removeItem("token")
+      //   return navigation("/")
       default:
         return <Dashboard />
     }
@@ -69,7 +69,7 @@ function Home() {
     <AppStyled bg={bg} className="App">
       {orbMemo}
       <MainLayout>
-        {/* <Navigation active={active} setActive={setActive} /> */}
+        <Navigation active={active} setActive={setActive} />
         <main>{displayData()}</main>
       </MainLayout>
     </AppStyled>
